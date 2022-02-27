@@ -1,0 +1,34 @@
+<!-- Login Form but for that we need to know routing. -->
+<!-- <div class="container vh-100 h-100">
+  <div class="row d-flex align-items-center justify-content-center h-100">
+    <div class="col-md-7 col-lg-5 col-xl-5">
+      <form>
+        <div class="form-outline ">
+          <input type="text" #username  class="form-control form-control-lg"  placeholder="Provide User Name">
+          <label class="form-label">User Name</label>
+          <p class="form-lable btn-danger" *ngIf="usernamestatus" >Provide Correct Username</p>  
+        </div>
+        <div class="form-outline ">
+          <input type="password" #passwd class="form-control form-control-lg" placeholder="Provide Password">
+          <label class="form-label">Password</label>
+          <p class="form-lable btn-danger" *ngIf="passwdstatus">Provide Correct Credentials.</p>  
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" (click)="verification(username.value,passwd.value)">Log in</button>
+      </form>
+    </div>
+  </div>
+</div> -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+  <div class="container-fluid">
+      <img src="https://standard.psu.edu/images/uploads/psu-mark.svg" height="38" alt="CoolBrand">
+      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-nav ms-auto">
+          <span class="nav-item nav-link text-light">Cart: [ 0 ]</span>
+      </div>
+  </div>
+</nav>
+
+<app-products></app-products>

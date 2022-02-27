@@ -1,12 +1,18 @@
-<div class="row d-flex">
-    <div class="card col-3 text-dark m-3" style="width: 18rem;" *ngFor="let data of jsondata; let i = index">
-        <img src={{data.imgurl}} class="card-img-top imagesize" alt="Not Found">
-        <div class="card-body">
-            <h5 class="card-title">{{data.name}}</h5>
-            <p class="card-text"><strong>{{"Price "+data.price+ "$"}}</strong></p>
-            <button  class="btn btn-primary " (click)="additem(data)">Add to Cart</button>
-            <button  class="btn btn-warning ">Expand</button>
+<div class="row container m-0 p-0 justify-content-center">
+    <div class="row col-8 m-3 d-flex">
+        <div class="col-4" *ngFor="let data of jsondata; let i = index">
+            <div class="card col-4 text-dark p-0 m-2" style="width: 16rem;" *ngIf="data.quantity>=1">
+                <img src={{data.imgurl}} class="card-img-top imagesize" alt="Not Found">
+                <div class="card-body">
+                    <h5 class="card-title">{{data.name}}</h5>
+                    <p class="card-text"><strong>{{"Price "+data.price+ "$"}}</strong></p>
+                    <button  class="btn btn-primary" (click)="additem(data)">Add to Cart</button>
+                    <a href="#showdata" class="btn btn-warning" (click)="showitem(data)">Expand</a>
+                </div>
+            </div>
         </div>
     </div>
+    <div class="col-3 m-3" *ngIf="flag">
+        <app-show-product [datareceiver]="datavalue"  (cartdata)="additem($event)"></app-show-product>
+    </div>
 </div>
-<!-- <app-show-product></app-show-product> -->

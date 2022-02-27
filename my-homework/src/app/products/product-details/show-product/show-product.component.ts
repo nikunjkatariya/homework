@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-show-product',
@@ -9,7 +9,18 @@ export class ShowProductComponent implements OnInit {
 
   constructor() { }
 
+  @Input() datareceiver:any=[];
+
   ngOnInit(): void {
+  }
+
+  @Output() cartdata = new EventEmitter<any>();
+  addtocart()
+  {
+    if(this.datareceiver.quantity>0)
+    {
+      this.cartdata.emit(this.datareceiver);
+    }
   }
 
 }

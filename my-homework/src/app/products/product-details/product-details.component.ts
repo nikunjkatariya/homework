@@ -66,6 +66,23 @@ export class ProductDetailsComponent implements OnInit {
   @Output() newItemEvent = new EventEmitter<any>();
   additem(value:any){
     this.newItemEvent.emit(value);
+    if(value.quantity>0)
+      value.quantity-=1;
   }
-  
+
+  datavalue = {};
+
+  flag=false;
+  showitem(value:any){
+    this.datavalue = {
+      "id":value.id,
+      "imgurl":value.imgurl,
+      "name":value.name,
+      "content":value.content,
+      "price":value.price,
+      "quantity":value.quantity
+    };
+    this.flag=true;
+  }
+
 }

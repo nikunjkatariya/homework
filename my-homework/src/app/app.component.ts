@@ -33,4 +33,9 @@ export class AppComponent {
   //     this.usernamestatus = true;
   //   }
   // }
+  counter=0;
+  gathercount()
+  {
+    this.counter++;
+  }
 }

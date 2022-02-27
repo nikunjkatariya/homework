@@ -19,16 +19,16 @@
   </div>
 </div> -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-dark ">
+<nav class="navbar navbar-expand-lg navbar-light bg-dark " id="showdata">
   <div class="container-fluid">
       <img src="https://standard.psu.edu/images/uploads/psu-mark.svg" height="38" alt="CoolBrand">
       <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
           <span class="navbar-toggler-icon"></span>
       </button>
       <div class="navbar-nav ms-auto">
-          <span class="nav-item nav-link text-light">Cart: [ 0 ]</span>
+          <span class="nav-item nav-link text-light">Cart: [ {{counter}} ]</span>
       </div>
   </div>
 </nav>
 
-<app-products></app-products>
+<app-products (cartcounter)="gathercount()"></app-products>

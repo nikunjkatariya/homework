@@ -1,1 +1,14 @@
-<p>show-product works!</p>
+<div class="card" style="width: 18rem;">
+    <img src={{datareceiver.imgurl}} class="card-img-top" alt="Not Found">
+    <div class="card-body">
+        <h5 class="card-title">{{datareceiver.name}}</h5>
+        <p class="card-text">{{datareceiver.content}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>Price: </strong> {{datareceiver.price}}$</li>
+        <li class="list-group-item"><strong>Available Quantity: </strong>{{datareceiver.quantity}}</li>
+    </ul>
+    <div class="card-body">
+        <button class="btn btn-primary" (click)="addtocart()">Add to Cart</button>
+    </div>
+</div>
